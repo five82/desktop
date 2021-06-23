@@ -19,8 +19,7 @@ filemanager
 applauncher (dmenu/rofi)
 notifications
 images
-wallpaper
-nitrogen
+wallpaper (including nitrogen)
 terminal
 starship
 lockscreen

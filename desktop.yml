@@ -17,4 +17,5 @@
     - sound
     - mkinitcpio
     - grub
+    - desktopmanager
     - code

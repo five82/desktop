@@ -1,0 +1,61 @@
+---
+# file roles/desktopmanager/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - sddm
+      - sddm-theme-sugar-candy-git
+
+- name: setup sddm.conf.d directory
+  ansible.builtin.file:
+    path: /etc/sddm.conf.d
+    owner: root
+    group: root
+    mode: '0755'
+    state: directory
+  become: yes
+
+- name: setup currenttheme.conf
+  ansible.builtin.copy:
+    src: files/currenttheme.conf
+    dest: /etc/sddm.conf.d/currenttheme.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+
+- name: setup SDDM Sugar Candy theme customizations
+  ansible.builtin.copy:
+    src: files/theme.conf.user
+    dest: /usr/share/sddm/themes/Sugar-Candy/theme.conf.user
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+
+- name: setup sddm-backgrounds directory
+  ansible.builtin.file:
+    path: /usr/local/share/sddm-backgrounds
+    owner: root
+    group: root
+    mode: '0755'
+    state: directory
+  become: yes
+
+- name: setup sddm wallpaper
+  ansible.builtin.copy:
+    src: files/robin.png
+    dest: /usr/local/share/sddm-backgrounds/robin.png
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+
+- name: setup sddm.service
+  ansible.builtin.systemd:
+    name: sddm.service
+    enabled: yes
+    state: started
+  become: yes
