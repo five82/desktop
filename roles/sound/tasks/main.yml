@@ -1,0 +1,19 @@
+---
+# file roles/code/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - pipewire
+      - pipewire-pulse
+      - pamixer
+  register: pipewireinstall
+
+- name: unmute volume
+  command: pamixer -u
+  when: pipewireinstall.changed
+
+- name: set volume level
+  command: pamixer --set-volume 100
+  when: pipewireinstall.changed

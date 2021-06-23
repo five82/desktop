@@ -12,6 +12,7 @@
       - man-db
       - rsync
       - tree
+      - wget
       - xdg-user-dirs
 
 - name: setup .bashrc
