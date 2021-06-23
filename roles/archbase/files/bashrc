@@ -1,0 +1,20 @@
+#
+# ~/.bashrc
+#
+
+# ** MANAGED BY ANSIBLE. CHANGES WILL BE OVERWRITTEN. **
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+alias ll='ls -l'
+alias vim='nvim'
+alias sudo='sudo '
+alias apv='ansible-playbook --ask-vault-pass'
+
+export TERM=xterm-88color
+export EDITOR=nvim
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

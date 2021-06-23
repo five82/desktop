@@ -1,0 +1,18 @@
+---
+# file roles/mkinitcpio/tasks/main.yml
+
+- name: setup mkinitcpio
+  ansible.builtin.copy:
+    src: files/mkinitcpio.conf
+    dest: /etc/mkinitcpio.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  become: yes
+  register: mkinitcpioconfig
+
+- name: regenerate mkinitcpio
+  command: mkinitcpio -P
+  become: yes
+  when: mkinitcpioconfig.changed

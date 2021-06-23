@@ -1,0 +1,22 @@
+---
+# file roles/nvidia/tasks/main.yml
+
+# nvidia kernel module chagnes are in the mkinitcpio role
+# nvidia kernel parameter changes are in the grub role
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - nvidia
+      - nvidia-dkms
+      - nvidia-settings
+
+- name: setup nvidia xorg config
+  ansible.builtin.copy:
+    src: files/20-nvidia.conf
+    dest: /etc/X11/xorg.conf.d/20-nvidia.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes

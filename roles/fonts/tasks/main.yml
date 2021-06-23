@@ -1,0 +1,42 @@
+---
+# file roles/fonts/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - cantarell-fonts
+      - noto-fonts
+      - ttf-liberation
+      - ttf-ubuntu-font-family
+      - ttf-ms-win10
+      - ttf-nerd-fonts-symbols
+
+- name: create .config/fontconfig directory
+  ansible.builtin.file:
+    path: ~/.config/fontconfig
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: setup fonts.conf
+  ansible.builtin.copy:
+    src: files/fonts.conf
+    dest: ~/.config/fontconfig/fonts.conf
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+
+- name: setup .Xresources
+  ansible.builtin.copy:
+    src: files/Xresources
+    dest: ~/.Xresources
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+  register: xresourcesconfig
+
+- name: xrdb merge Xresources changes
+  command: xrdb -merge ~/.Xresources
+  when: xresourcesconfig.changed

@@ -1,0 +1,10 @@
+---
+# file roles/configprep/tasks/main.yml
+
+- name: define archusername
+  command: whoami
+  register: archusername
+
+- name: define archgroup
+  command: id -gn
+  register: archgroup

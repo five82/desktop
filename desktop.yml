@@ -1,0 +1,19 @@
+---
+# file: desktop.yml
+- hosts: localhost
+  connection: local
+  roles:
+    - configprep
+    - archbase
+    - openssh
+    - sudo
+    - dns
+    - makepkg
+    - docker
+    - xorg
+    - nvidia
+    - fonts
+    - gtk
+    - mkinitcpio
+    - grub
+    - code

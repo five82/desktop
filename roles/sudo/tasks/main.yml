@@ -1,0 +1,32 @@
+---
+# file roles/sudo/tasks/main.yml
+
+- name: setup wheel sudo permissions
+  ansible.builtin.copy:
+    src: files/01-wheel
+    dest: /etc/sudoers.d/01-wheel
+    owner: root
+    group: root
+    mode: '0640'
+  become: yes
+
+- name: set visudo default editor to neovim
+  ansible.builtin.copy:
+    src: files/02-editor
+    dest: /etc/sudoers.d/02-editor
+    owner: root
+    group: root
+    mode: '0640'
+  become: yes
+
+# Remove any sudoers changes
+# All modification must be in /etc/sudoers.d
+- name: restore default sudoers file
+  ansible.builtin.copy:
+    src: files/sudoers
+    dest: /etc/sudoers
+    owner: root
+    group: root
+    mode: '0440'
+    backup: yes
+  become: yes

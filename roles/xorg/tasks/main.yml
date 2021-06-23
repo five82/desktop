@@ -1,0 +1,9 @@
+---
+# file roles/xorg/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - xorg-server
+      - xorg-xrdb

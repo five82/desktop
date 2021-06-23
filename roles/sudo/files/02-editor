@@ -1,0 +1,5 @@
+# ** MANAGED BY ANSIBLE. CHANGES WILL BE OVERWRITTEN. **
+
+Defaults	env_reset
+Defaults	editor=/usr/bin/nvim, !env_editor
+Defaults        env_keep += "EDITOR"

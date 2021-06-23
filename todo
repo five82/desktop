@@ -1,0 +1,30 @@
+core (mandb neovim bashrc)
+openssh
+sudo
+dns (avahi)
+makepkg
+docker
+xorg
+nvidia
+fonts
+gtk
+mkinitcpio
+grub
+desktopmanager
+i3
+sessionmanager
+picom
+filemanager
+notifications
+imageviewer
+wallpaper
+nitrogen
+terminal
+starship
+sound
+lockscreen
+firefox
+code
+spotifyd
+makemkv
+steam

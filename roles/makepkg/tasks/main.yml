@@ -1,0 +1,18 @@
+---
+# file roles/makepkg/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - ccache
+
+- name: setup makepkg.conf
+  ansible.builtin.copy:
+    src: files/makepkg.conf
+    dest: /etc/makepkg.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  become: yes

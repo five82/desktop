@@ -1,0 +1,51 @@
+---
+# file roles/dns/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - avahi
+      - nss-mdns
+
+- name: create /etc/systemd/resolved.conf.d directory
+  ansible.builtin.file:
+    path: /etc/systemd/resolved.conf.d
+    owner: root
+    group: root
+    mode: '0755'
+    state: directory
+  become: yes
+
+- name: configure resolved.conf
+  ansible.builtin.copy:
+    src: files/01-multicastdns
+    dest: /etc/systemd/resolved.conf.d/01-multicastdns
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+  register: resolvedconfig
+
+- name: restart systemd-resolved.service
+  ansible.builtin.systemd:
+    name: systemd-resolved.service
+    state: restarted
+  when: resolvedconfig.changed
+  become: yes
+
+- name: configure nsswitch.conf
+  ansible.builtin.copy:
+    src: files/nsswitch.conf
+    dest: /etc/nsswitch.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+
+- name: setup avahi-daemon
+  ansible.builtin.systemd:
+    name: avahi-daemon.service
+    enabled: yes
+    state: started
+  become: yes

@@ -1,0 +1,48 @@
+---
+# file roles/archbase/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - htop
+      - linux-headers
+      - linux-zen-headers
+      - neovim
+      - man-db
+      - rsync
+      - tree
+      - xdg-user-dirs
+
+- name: setup .bashrc
+  ansible.builtin.copy:
+    src: files/bashrc
+    dest: ~/.bashrc
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+    backup: yes
+
+- name: setup .gitconfig
+  ansible.builtin.copy:
+    src: files/avault-gitconfig
+    dest: ~/.gitconfig
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+
+- name: create .config/systemd directory
+  ansible.builtin.file:
+    path: ~/.config/systemd
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: create .config/systemd/user directory
+  ansible.builtin.file:
+    path: ~/.config/systemd/user
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory

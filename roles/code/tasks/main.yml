@@ -1,0 +1,8 @@
+---
+# file roles/code/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - code

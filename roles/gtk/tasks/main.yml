@@ -1,0 +1,54 @@
+---
+# file roles/gtk/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - lxappearance
+      - papirus-icon-theme
+
+- name: create ~/projects/dracula directory
+  ansible.builtin.file:
+    path: ~/projects/dracula
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: create ~/.icons directory
+  ansible.builtin.file:
+    path: ~/.icons
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: create ~/.themes directory
+  ansible.builtin.file:
+    path: ~/.themes
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: git clone dracula/gtk
+  ansible.builtin.git:
+    repo: 'https://github.com/dracula/gtk.git'
+    dest: ~/projects/dracula/gtk
+    clone: yes
+    update: yes
+
+- name: create dracula gtk theme symlink
+  ansible.builtin.file:
+    src: ~/projects/dracula/gtk
+    dest: ~/.themes/dracula
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    state: link
+
+- name: install dracula gtk icons
+  ansible.builtin.unarchive:
+    src: https://github.com/dracula/gtk/files/5214870/Dracula.zip
+    dest: ~/.icons/
+    remote_src: yes
