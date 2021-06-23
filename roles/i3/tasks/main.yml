@@ -1,0 +1,45 @@
+---
+# file roles/i3/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - i3-gaps
+      - i3-wm
+
+- name: create .config/i3 directory
+  ansible.builtin.file:
+    path: ~/.config/i3
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: create .config/i3status directory
+  ansible.builtin.file:
+    path: ~/.config/i3status
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: setup i3 config
+  ansible.builtin.copy:
+    src: files/i3config
+    dest: ~/.config/i3/config
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+    backup: yes
+
+- name: setup i3 status config
+  ansible.builtin.copy:
+    src: files/i3statusconfig
+    dest: ~/.config/i3status/config
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+    backup: yes
+
+

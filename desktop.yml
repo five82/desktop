@@ -18,4 +18,5 @@
     - mkinitcpio
     - grub
     - desktopmanager
+    - i3
     - code
