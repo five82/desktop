@@ -7,6 +7,7 @@
     name:
       - cantarell-fonts
       - noto-fonts
+      - ttf-dejavu
       - ttf-liberation
       - ttf-ubuntu-font-family
       - ttf-nerd-fonts-symbols
