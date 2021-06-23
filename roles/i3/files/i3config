@@ -92,9 +92,9 @@ bindsym $mod+e layout toggle split
 
 # applications
 
-bindsym $mod+Shift+w firefox
-bindsym $mod+Shift+v code
-bindsym $mod+Shift+f thunar
+bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+v exec code
+bindsym $mod+Shift+f exec thunar
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
