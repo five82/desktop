@@ -19,4 +19,5 @@
     - grub
     - desktopmanager
     - i3
+    - sessionmanager
     - code
