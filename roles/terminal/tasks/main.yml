@@ -1,5 +1,5 @@
 ---
-# file roles/kitty/tasks/main.yml
+# file roles/terminal/tasks/main.yml
 
 - name: install required packages
   aur:
