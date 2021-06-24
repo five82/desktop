@@ -1,0 +1,25 @@
+---
+# file roles/picom/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - picom
+
+- name: create .config/picom directory
+  ansible.builtin.file:
+    path: ~/.config/picom
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: setup picom.conf
+  ansible.builtin.copy:
+    src: files/picom.conf
+    dest: ~/.config/picom/picom.conf
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+

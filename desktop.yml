@@ -20,4 +20,5 @@
     - desktopmanager
     - i3
     - sessionmanager
+    - picom
     - code
