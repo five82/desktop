@@ -1,32 +1,32 @@
-archbase (man-db neovim bashrc)
-openssh
-sudo
-dns (avahi)
-makepkg
-docker
-xorg
-nvidia
-fonts
-gtk
-sound
-mkinitcpio
-grub
-desktopmanager
-i3
-sessionmanager
-picom
-filemanager
-applauncher (dmenu/rofi)
-notifications
-images
-wallpaper (including nitrogen)
-terminal
-starship
-lockscreen
-webbrowser (firefox)
-code
-music (spotifyd, spotify tui)
-video (mpv)
-makemkv
-archivemanager
-steam
+[*] archbase (man-db neovim bashrc)
+[*] openssh
+[*] sudo
+[*] dns (avahi)
+[*] makepkg
+[*] docker
+[*] xorg
+[*] nvidia
+[*] fonts
+[*] gtk
+[*] sound
+[*] mkinitcpio
+[*] grub
+[*] desktopmanager
+[*] i3
+[*] sessionmanager
+[*] picom
+[ ] filemanager
+[ ] applauncher (dmenu/rofi)
+[ ] notifications
+[ ] images
+[ ] wallpaper (including nitrogen)
+[*] terminal
+[ ] starship
+[ ] lockscreen
+[ ] webbrowser (ungoogled chromium)
+[*] code
+[ ] music (spotifyd, spotify tui)
+[ ] video (mpv)
+[ ] makemkv
+[ ] archivemanager
+[ ] steam
