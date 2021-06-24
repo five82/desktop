@@ -10,10 +10,20 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-alias ll='ls -l'
+alias ls='exa -la --color=always --group-directories-first'
+alias ll='exa -l --color=always --group-directories-first'
 alias vim='nvim'
 alias sudo='sudo '
 alias apv='ansible-playbook --ask-vault-pass'
+alias cat='bat --theme Dracula'
+
+# flags
+alias df='df -h'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
 export TERM=xterm-88color
 export EDITOR=nvim

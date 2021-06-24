@@ -5,12 +5,18 @@
   aur:
     use: paru
     name:
+      - bat
+      - exa
+      - fd
       - htop
       - linux-headers
       - linux-zen-headers
       - neovim
       - man-db
+      - procs
+      - ripgrep
       - rsync
+      - tldr
       - tree
       - wget
       - xdg-user-dirs
