@@ -21,4 +21,5 @@
     - i3
     - sessionmanager
     - picom
+    - terminal
     - code

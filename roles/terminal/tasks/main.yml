@@ -1,0 +1,40 @@
+---
+# file roles/kitty/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - kitty
+
+- name: create .config/kitty directory
+  ansible.builtin.file:
+    path: ~/.config/kitty
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: setup kitty.conf
+  ansible.builtin.copy:
+    src: files/kitty.conf
+    dest: ~/.config/kitty/kitty.conf
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+
+- name: setup diff.conf
+  ansible.builtin.copy:
+    src: files/diff.conf
+    dest: ~/.config/kitty/diff.conf
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+
+- name: setup dracula.conf
+  ansible.builtin.copy:
+    src: files/dracula.conf
+    dest: ~/.config/kitty/dracula.conf
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
