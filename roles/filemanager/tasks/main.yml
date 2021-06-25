@@ -1,0 +1,14 @@
+---
+# file roles/filemanager/tasks/main.yml
+
+# The thunar daemon autostart is in the i3 config file.
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - thunar
+      - thunar-volman
+      - gvfs
+      - gvfs-smb
+      - sshfs

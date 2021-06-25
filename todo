@@ -15,7 +15,7 @@
 [*] i3 - need to finish i3 bar
 [*] sessionmanager
 [*] picom
-[ ] filemanager
+[*] filemanager
 [ ] applauncher (dmenu/rofi)
 [ ] notifications
 [ ] clipboard
