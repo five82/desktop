@@ -1,7 +1,7 @@
 configuration {
     modi: "drun,run,ssh";
     theme: "~/.config/rofi/dracula-theme.rasi";
-	width: 25;
+    width: 25;
 /*	lines: 15;*/
 /*	columns: 1;*/
 /*	font: "mono 12";*/
