@@ -22,5 +22,6 @@
     - sessionmanager
     - picom
     - filemanager
+    - applauncher
     - terminal
     - code

@@ -1,0 +1,32 @@
+---
+# file roles/applauncher/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - rofi
+
+- name: create .config/rofi directory
+  ansible.builtin.file:
+    path: ~/.config/rofi
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: setup dracula-theme.rasi
+  ansible.builtin.copy:
+    src: files/dracula-theme.rasi
+    dest: ~/.config/rofi/dracula-theme.rasi
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+
+- name: setup config.rasi
+  ansible.builtin.copy:
+    src: files/config.rasi
+    dest: ~/.config/rofi/config.rasi
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'

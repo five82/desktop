@@ -16,7 +16,7 @@
 [*] sessionmanager
 [*] picom
 [*] filemanager
-[ ] applauncher (dmenu/rofi)
+[*] applauncher
 [ ] notifications
 [ ] clipboard
 [ ] images
@@ -24,6 +24,7 @@
 [*] terminal
 [ ] starship
 [ ] lockscreen
+[ ] texteditor
 [ ] webbrowser (ungoogled chromium)
 [*] code
 [ ] music (spotifyd, spotify tui)
