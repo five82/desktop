@@ -7,3 +7,4 @@
     name:
       - xorg-server
       - xorg-xrdb
+      - xorg-xinput

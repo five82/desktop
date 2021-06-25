@@ -1,4 +1,4 @@
-[*] archbase (man-db neovim bashrc)
+[*] archbase
 [*] openssh
 [*] sudo
 [*] dns (avahi)
@@ -12,12 +12,13 @@
 [*] mkinitcpio
 [*] grub
 [*] desktopmanager
-[*] i3
+[*] i3 - need to finish i3 bar
 [*] sessionmanager
 [*] picom
 [ ] filemanager
 [ ] applauncher (dmenu/rofi)
 [ ] notifications
+[ ] clipboard
 [ ] images
 [ ] wallpaper (including nitrogen)
 [*] terminal
