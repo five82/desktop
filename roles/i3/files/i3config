@@ -92,7 +92,7 @@ bindsym $mod+e layout toggle split
 
 # applications
 
-bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+w exec chromium
 bindsym $mod+Shift+v exec code
 bindsym $mod+Shift+f exec thunar
 
