@@ -187,6 +187,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# exit i3
+set $System System (l) logout, (s) shutdown, (r) reboot, (Shift+s) suspend
+mode "$System" {
+    bindsym l exec --no-startup-id i3-msg exit, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Shift+x mode "default"
+}
+
+bindsym $mod+Shift+x mode "$System"
+
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
