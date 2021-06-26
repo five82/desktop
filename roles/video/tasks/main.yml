@@ -1,0 +1,8 @@
+---
+# file roles/video/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - mpv
