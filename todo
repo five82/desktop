@@ -29,7 +29,7 @@
 [ ] webbrowser (ungoogled chromium)
 [*] code
 [ ] music (spotifyd, spotify tui)
-[ ] video (mpv)
+[*] video (mpv)
 [*] makemkv
 [ ] archivemanager
 [ ] steam
