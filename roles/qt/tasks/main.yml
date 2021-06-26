@@ -1,0 +1,8 @@
+---
+# file roles/qt/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - qt5-styleplugins

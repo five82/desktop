@@ -5,6 +5,7 @@
   aur:
     use: paru
     name:
+      - gtk2
       - lxappearance
       - papirus-icon-theme
 

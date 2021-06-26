@@ -8,6 +8,7 @@
 [*] nvidia
 [*] fonts
 [*] gtk
+[*] qt
 [*] sound
 [*] mkinitcpio
 [*] grub
@@ -29,6 +30,6 @@
 [*] code
 [ ] music (spotifyd, spotify tui)
 [ ] video (mpv)
-[ ] makemkv
+[*] makemkv
 [ ] archivemanager
 [ ] steam

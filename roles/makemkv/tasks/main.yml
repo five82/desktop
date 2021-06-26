@@ -1,0 +1,8 @@
+---
+# file roles/makemkv/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - makemkv

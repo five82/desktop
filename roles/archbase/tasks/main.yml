@@ -19,6 +19,7 @@
       - rsync
       - tldr
       - tree
+      - usbutils
       - wget
       - xdg-user-dirs
 
@@ -31,6 +32,15 @@
     mode: '0644'
     backup: yes
 
+- name: setup .bash_profile
+  ansible.builtin.copy:
+    src: files/bash_profile
+    dest: ~/.bash_profile
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+    backup: yes
+
 - name: setup .gitconfig
   ansible.builtin.copy:
     src: files/avault-gitconfig
@@ -38,6 +48,16 @@
     owner: "{{archusername.stdout}}"
     group: "{{archgroup.stdout}}"
     mode: '0644'
+
+# required for makemkv access to optical drive
+- name: load sg kernel module on boot
+  ansible.builtin.copy:
+    src: files/sg.conf
+    dest: /etc/modules-load.d/sg.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
 
 - name: create .config/systemd directory
   ansible.builtin.file:

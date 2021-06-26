@@ -1,0 +1,10 @@
+#
+# ~/.bash_profile
+#
+
+# ** MANAGED BY ANSIBLE. CHANGES WILL BE OVERWRITTEN. **
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# qt config
+export QT_QPA_PLATFORMTHEME="gtk2"
