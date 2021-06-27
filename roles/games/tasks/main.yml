@@ -1,0 +1,9 @@
+---
+# file roles/games/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - steam
+      - community/gamemode

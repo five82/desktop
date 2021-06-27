@@ -22,6 +22,7 @@
       - usbutils
       - wget
       - xdg-user-dirs
+      - youtube-dl
 
 - name: setup .bashrc
   ansible.builtin.copy:
@@ -48,6 +49,15 @@
     owner: "{{archusername.stdout}}"
     group: "{{archgroup.stdout}}"
     mode: '0644'
+
+- name: setup /etc/pacman.conf
+  ansible.builtin.copy:
+    src: files/pacman.conf
+    dest: /etc/pacman.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
 
 # required for makemkv access to optical drive
 - name: load sg kernel module on boot

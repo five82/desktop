@@ -12,7 +12,7 @@
 [*] sound
 [*] mkinitcpio
 [*] grub
-[*] desktopmanager
+[*] desktopmanager - switch sddm theme
 [*] i3 - need to finish i3 bar
 [*] sessionmanager
 [*] picom
@@ -32,4 +32,4 @@
 [*] video (mpv)
 [*] makemkv
 [ ] archivemanager
-[ ] steam
+[*] games

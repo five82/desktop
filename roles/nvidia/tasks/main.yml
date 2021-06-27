@@ -11,6 +11,7 @@
       - nvidia
       - nvidia-dkms
       - nvidia-settings
+      - lib32-nvidia-utils # steam dependency
 
 - name: setup nvidia xorg config
   ansible.builtin.copy:
