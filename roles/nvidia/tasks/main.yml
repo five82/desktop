@@ -8,10 +8,10 @@
   aur:
     use: paru
     name:
-      - nvidia
-      - nvidia-dkms
-      - nvidia-settings
-      - lib32-nvidia-utils # steam dependency
+      - nvidia-dkms-performance
+      - nvidia-settings-performance
+      - nvidia-utils-performance
+      - lib32-nvidia-utils-performance # steam dependency
 
 - name: setup nvidia xorg config
   ansible.builtin.copy:
