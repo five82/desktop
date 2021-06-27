@@ -93,7 +93,7 @@ bindsym $mod+e layout toggle split
 # applications
 
 bindsym $mod+Shift+w exec chromium
-bindsym $mod+Shift+v exec code
+bindsym $mod+Shift+v exec vscodium
 bindsym $mod+Shift+f exec thunar
 
 # toggle tiling / floating

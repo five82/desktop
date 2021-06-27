@@ -1,8 +1,8 @@
 ---
-# file roles/code/tasks/main.yml
+# file roles/vscodium/tasks/main.yml
 
 - name: install required packages
   aur:
     use: paru
     name:
-      - code
+      - vscodium
