@@ -1,0 +1,24 @@
+---
+# file roles/notifications/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - dunst
+      
+- name: create .config/dunst directory
+  ansible.builtin.file:
+    path: ~/.config/dunst
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: setup dunstrc
+  ansible.builtin.copy:
+    src: files/dunstrc
+    dest: ~/.config/dunst/dunstrc
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
