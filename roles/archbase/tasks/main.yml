@@ -93,7 +93,6 @@
     mode: '0755'
     state: directory
 
-# Commenting out by default.
 # Uncomment if you experience keyserver connectivity problems    
 # - name: change default keyserver to keyserver.ubuntu.com
 #   ansible.builtin.copy:
