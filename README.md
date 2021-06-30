@@ -5,6 +5,6 @@ Requirements: A base Arch Linux install or a minimal installation using archinst
 
 *Note: Ansiible Vault files are not stored in this repo. You will need to modify the following roles that use them.*\
 \
-  *-archbase*\
-  *-music*\
-  *-openssh*
+  *- archbase*\
+  *- music*\
+  *- openssh*
