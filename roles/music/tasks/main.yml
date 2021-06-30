@@ -1,0 +1,34 @@
+---
+# file roles/notifications/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - spotify
+      - spotifyd
+      - playerctl
+      
+- name: create .config/spotifyd directory
+  ansible.builtin.file:
+    path: ~/.config/spotifyd
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: setup spotifyd.conf
+  ansible.builtin.copy:
+    src: files/avault-spotifyd.conf
+    dest: ~/.config/spotifyd/spotifyd.conf
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+
+- name: setup spotify-notifications.sh
+  ansible.builtin.copy:
+    src: files/spotifyd-notifications.sh
+    dest: ~/.config/spotifyd/spotifyd-notifications.sh
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
