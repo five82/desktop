@@ -6,6 +6,7 @@
     use: paru
     name:
       - pipewire
+      - pipewire-alsa
       - pipewire-pulse
       - pamixer
   register: pipewireinstall

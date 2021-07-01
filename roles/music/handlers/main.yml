@@ -1,0 +1,9 @@
+---
+
+- name: restart spotifyd
+  ansible.builtin.systemd:
+    daemon_reload: yes
+    name: spotifyd.service
+    enabled: yes
+    scope: user
+    state: restarted

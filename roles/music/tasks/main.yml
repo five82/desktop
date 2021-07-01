@@ -7,7 +7,8 @@
     name:
       - spotify
       - spotifyd
-      - playerctl
+      # required for notifications
+      #- playerctl
       
 - name: create .config/spotifyd directory
   ansible.builtin.file:
@@ -25,10 +26,28 @@
     group: "{{archgroup.stdout}}"
     mode: '0644'
 
-- name: setup spotify-notifications.sh
+# Commenting out until we implement notifications
+# - name: setup spotifyd-notifications.sh
+#   ansible.builtin.copy:
+#     sst: ~/.config/spotifyd/spotifyd-notifications.sh
+#     ownerrc: files/spotifyd-notifications.sh
+#     de: "{{archusername.stdout}}"
+#     group: "{{archgroup.stdout}}"
+#     mode: '0755'
+
+- name: setup spotifyd.service
   ansible.builtin.copy:
-    src: files/spotifyd-notifications.sh
-    dest: ~/.config/spotifyd/spotifyd-notifications.sh
+    src: files/spotifyd.service
+    dest: ~/.config/systemd/user/spotifyd.service
     owner: "{{archusername.stdout}}"
     group: "{{archgroup.stdout}}"
-    mode: '0755'
+    mode: '0644'
+  notify:
+    - restart spotifyd
+
+- name: start spotifyd.service
+  ansible.builtin.systemd:
+    name: spotifyd.service
+    enabled: yes
+    scope: user
+    state: started

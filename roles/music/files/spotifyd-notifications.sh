@@ -2,19 +2,21 @@
 
 # spotifyd notifications
 
+# Keeping this for reference but spotifyd player events that
+# trigger notifications are too buggy to use yet
+
 # ** MANAGED BY ANSIBLE. CHANGES WILL BE OVERWRITTEN. **
 
 # Add the following line to your spotifyd.conf file:
-# onevent = "/path/to/file/spotify-notifications.sh" 
+# onevent = "~/.config/spotifyd/spotifyd-notifications.sh"
 
-if [ "$PLAYER_EVENT" = "start" ] || [ "$PLAYER_EVENT" = "change" ];
-then
+if [ "$PLAYER_EVENT" = "change" ] || [ "$PLAYER_EVENT" = "play" ]; then
   trackName=$(playerctl metadata title)
   artistAndAlbumName=$(playerctl metadata --format "{{ artist }} ({{ album }})")
   coverArtUrl=$(playerctl metadata mpris:artUrl)
   coverArtFile="/tmp/$(playerctl metadata mpris:artUrl | awk -F/ '{print $5}')"
-
-  wget -P /tmp $coverArtUrl
+  if [ ! -e "$coverArtFile" ]; then
+    wget -P /tmp "$coverArtUrl"
+  fi
   notify-send -u low -i "$coverArtFile" "$trackName" "$artistAndAlbumName "
-  rm $coverArtFile
 fi
