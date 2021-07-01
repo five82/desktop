@@ -52,4 +52,5 @@
   ansible.builtin.unarchive:
     src: https://github.com/dracula/gtk/files/5214870/Dracula.zip
     dest: ~/.icons/
+    creates: ~/.icons/Dracula
     remote_src: yes
