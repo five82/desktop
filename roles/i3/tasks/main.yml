@@ -6,7 +6,9 @@
     use: paru
     name:
       - i3-gaps
-      - i3-wm
+      - i3blocks
+      - i3status
+      - i3lock-color
 
 - name: create .config/i3 directory
   ansible.builtin.file:
@@ -41,5 +43,3 @@
     group: "{{archgroup.stdout}}"
     mode: '0644'
     backup: yes
-
-

@@ -9,7 +9,6 @@
 [*] fonts
 [*] gtk
 [*] qt
-[ ] powermanagement
 [*] sound
 [*] mkinitcpio
 [*] grub
@@ -24,7 +23,6 @@
 [*] wallpaper (including nitrogen)
 [*] terminal
 [ ] starship
-[ ] lockscreen
 [ ] texteditor
 [ ] webbrowser (ungoogled chromium)
 [*] vscodium
