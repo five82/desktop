@@ -17,5 +17,3 @@ RestartSec=
 
 [Install]
 WantedBy=default.target
-
-# adding comment
