@@ -1,0 +1,38 @@
+---
+# file roles/wallpaper/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - nitrogen
+
+- name: git clone five82/wallpaper
+  ansible.builtin.git:
+    repo: 'https://github.com/five82/wallpaper.git'
+    dest: ~/projects/ansible/wallpaper
+    clone: yes
+    update: yes
+
+- name: git clone dwt1/wallpapers
+  ansible.builtin.git:
+    repo: 'https://gitlab.com/dwt1/wallpapers.git'
+    dest: ~/projects/ansible/wallpapers
+    clone: yes
+    update: yes
+
+- name: create wallpaper symlink
+  ansible.builtin.file:
+    src: ~/projects/ansible/wallpaper/wallpaper
+    dest: ~/Pictures/wallpaper
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    state: link
+
+- name: create wallpaper symlink
+  ansible.builtin.file:
+    src: ~/projects/ansible/wallpapers
+    dest: ~/Pictures/dt-wallpaper
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    state: link
