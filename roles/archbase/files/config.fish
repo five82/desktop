@@ -13,6 +13,10 @@ alias cat='bat --theme Dracula'
 # flags
 alias df='df -h'
 
+# env config
+setenv TERM xterm-256color
+setenv EDITOR nvim
+
 # remove fish banner
 set fish_greeting
 
@@ -49,3 +53,11 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
+
+# ssh agent config
+if test -z (pgrep -f "ssh-agent -c")
+  eval (ssh-agent -c) > /dev/null
+  set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+  set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+  set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+end

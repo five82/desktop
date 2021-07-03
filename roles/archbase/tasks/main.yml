@@ -111,7 +111,6 @@
     mode: '0755'
     state: directory
 
-# required for starship
 - name: setup config.fish
   ansible.builtin.copy:
     src: files/config.fish
