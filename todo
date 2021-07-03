@@ -23,9 +23,8 @@
 [*] wallpaper (including nitrogen)
 [*] terminal
 [ ] starship
-[ ] texteditor
+[*] texteditor
 [ ] webbrowser (ungoogled chromium)
-[*] vscodium
 [*] music (spotifyd, spotify tui)
 [*] video (mpv)
 [*] makemkv

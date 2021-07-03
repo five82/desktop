@@ -1,8 +1,8 @@
 ---
-# file roles/vscodium/tasks/main.yml
+# file roles/texteditor/tasks/main.yml
 
 - name: install required packages
   aur:
     use: paru
     name:
-      - vscodium
+      - sublime-text-4
