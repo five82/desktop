@@ -7,7 +7,6 @@ starship init fish | source
 alias ls='exa --color=always --group-directories-first'
 alias ll='exa -l --color=always --group-directories-first'
 alias vim='nvim'
-alias sudo='sudo '
 alias apv='ansible-playbook --ask-vault-pass'
 alias cat='bat --theme Dracula'
 
