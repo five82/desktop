@@ -18,6 +18,7 @@
       - procs
       - ripgrep
       - rsync
+      - starship
       - tldr
       - tree
       - usbutils
@@ -101,6 +102,23 @@
     group: "{{archgroup.stdout}}"
     mode: '0755'
     state: directory
+
+- name: create .config/fish directory
+  ansible.builtin.file:
+    path: ~/.config/fish
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+# required for starship
+- name: setup config.fish
+  ansible.builtin.copy:
+    src: files/config.fish
+    dest: ~/.config/fish/config.fish
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
 
 # Uncomment if you experience keyserver connectivity problems    
 # - name: change default keyserver to keyserver.ubuntu.com

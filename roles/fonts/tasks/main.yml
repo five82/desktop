@@ -7,6 +7,7 @@
     name:
       - cantarell-fonts
       - noto-fonts
+      - noto-fonts-emoji
       - ttf-dejavu
       - ttf-droid
       - ttf-liberation
