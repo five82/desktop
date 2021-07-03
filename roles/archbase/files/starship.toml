@@ -1,0 +1,9 @@
+# starship.toml
+
+# ** MANAGED BY ANSIBLE. CHANGES WILL BE OVERWRITTEN. **
+
+[style]
+bold:
+underline:
+dimmed:
+inverted:
