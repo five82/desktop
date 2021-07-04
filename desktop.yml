@@ -23,6 +23,7 @@
     - sessionmanager
     - picom
     - filemanager
+    - archivemanager
     - applauncher
     - notifications
     - images

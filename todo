@@ -18,6 +18,7 @@
 [*] sessionmanager
 [*] picom
 [*] filemanager
+[*] archivemanager
 [*] applauncher
 [*] notifications
 [*] images
@@ -28,6 +29,5 @@
 [*] music (spotifyd, spotify tui)
 [*] video (mpv)
 [*] makemkv
-[ ] archivemanager
 [ ] wine
 [*] games

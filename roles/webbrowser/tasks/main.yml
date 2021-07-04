@@ -1,5 +1,5 @@
 ---
-# file roles/texteditor/tasks/main.yml
+# file roles/webbrowser/tasks/main.yml
 
 - name: install required packages
   aur:
