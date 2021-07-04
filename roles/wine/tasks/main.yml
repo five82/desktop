@@ -1,0 +1,8 @@
+---
+# file roles/wine/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - wine
