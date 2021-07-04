@@ -1,0 +1,9 @@
+---
+# file roles/texteditor/tasks/main.yml
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - ungoogled-chromium
+      - chromium-widevine
