@@ -5,7 +5,7 @@
   aur:
     use: paru
     name:
-      - picom
+      - picom-jonaburg-git
 
 - name: create .config/picom directory
   ansible.builtin.file:

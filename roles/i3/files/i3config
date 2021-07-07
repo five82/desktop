@@ -14,7 +14,7 @@ exec nitrogen --restore
 exec dunst
 
 # Borders
-default_border pixel 4
+default_border pixel 0
 default_floating_border pixel 0
 
 # Gaps
