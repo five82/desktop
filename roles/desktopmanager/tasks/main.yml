@@ -26,9 +26,18 @@
     mode: '0644'
   become: yes
 
-- name: setup SDDM Sugar Candy theme customizations
+- name: setup /usr/local/share/git directory
+  ansible.builtin.file:
+    path: /usr/local/share/git
+    owner: root
+    group: root
+    mode: '0755'
+    state: directory
+  become: yes
+
+- name: setup sddm Sugar Candy theme customizations
   ansible.builtin.copy:
-    src: files/theme.conf.user
+    src: files/sugar-candy-theme.conf.user
     dest: /usr/share/sddm/themes/Sugar-Candy/theme.conf.user
     owner: root
     group: root
@@ -44,7 +53,25 @@
     state: directory
   become: yes
 
-- name: setup sddm wallpaper
+- name: setup sddm blue wallpaper
+  ansible.builtin.copy:
+    src: files/blue.png
+    dest: /usr/local/share/sddm-backgrounds/blue.png
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+
+- name: setup sddm dracula wallpaper
+  ansible.builtin.copy:
+    src: files/dracula.png
+    dest: /usr/local/share/sddm-backgrounds/dracula.png
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+
+- name: setup sddm robin wallpaper
   ansible.builtin.copy:
     src: files/robin.png
     dest: /usr/local/share/sddm-backgrounds/robin.png

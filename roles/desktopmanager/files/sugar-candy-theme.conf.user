@@ -1,0 +1,9 @@
+# ** MANAGED BY ANSIBLE. CHANGES WILL BE OVERWRITTEN. **
+
+[General]
+Background=/usr/local/share/sddm-backgrounds/blue.png
+ScreenWidth=3440
+ScreenHeight=1440
+ScreenPadding=1
+HourFormat="h:mm AP"
+DateFormat="dddd, M/d/yy"

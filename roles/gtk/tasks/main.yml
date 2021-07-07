@@ -9,9 +9,9 @@
       - lxappearance
       - papirus-icon-theme
 
-- name: create ~/projects/dracula directory
+- name: create ~/projects/ansbile/dracula directory
   ansible.builtin.file:
-    path: ~/projects/dracula
+    path: ~/projects/ansible/dracula
     owner: "{{archusername.stdout}}"
     group: "{{archgroup.stdout}}"
     mode: '0755'
@@ -36,13 +36,13 @@
 - name: git clone dracula/gtk
   ansible.builtin.git:
     repo: 'https://github.com/dracula/gtk.git'
-    dest: ~/projects/dracula/gtk
+    dest: ~/projects/ansible/dracula/gtk
     clone: yes
     update: yes
 
 - name: create dracula gtk theme symlink
   ansible.builtin.file:
-    src: ~/projects/dracula/gtk
+    src: ~/projects/ansible/dracula/gtk
     dest: ~/.themes/dracula
     owner: "{{archusername.stdout}}"
     group: "{{archgroup.stdout}}"
