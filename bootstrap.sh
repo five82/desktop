@@ -6,7 +6,7 @@
 #   - Install sudo and give the user or wheel group full sudo execute permissions.
 
 # Run bootstrap.sh first. Then deploy with Ansible. Run both commands with your non-root user.
-
+# ansible-playbook --ask-vault-pass site.yml
 
 timezone="EST5EDT"
 
