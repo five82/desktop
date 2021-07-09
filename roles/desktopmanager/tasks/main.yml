@@ -84,5 +84,4 @@
   ansible.builtin.systemd:
     name: sddm.service
     enabled: yes
-    state: started
   become: yes

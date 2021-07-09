@@ -1,0 +1,4 @@
+---
+
+- name: reload package database
+  ansible.builtin.command: paru -Sy

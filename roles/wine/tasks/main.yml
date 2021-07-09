@@ -5,4 +5,4 @@
   aur:
     use: paru
     name:
-      - wine
+      - wine-staging

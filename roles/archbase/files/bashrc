@@ -16,6 +16,8 @@ alias vim='nvim'
 alias sudo='sudo '
 alias apv='ansible-playbook --ask-vault-pass'
 alias cat='bat --theme Dracula'
+alias unmute='pamixer -u'
+alias volfull='pamixer --set-volume 100'
 
 # flags
 alias df='df -h'

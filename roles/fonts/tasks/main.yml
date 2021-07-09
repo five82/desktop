@@ -38,8 +38,3 @@
     owner: "{{archusername.stdout}}"
     group: "{{archgroup.stdout}}"
     mode: '0644'
-  register: xresourcesconfig
-
-- name: xrdb merge Xresources changes
-  command: xrdb -merge ~/.Xresources
-  when: xresourcesconfig.changed

@@ -9,6 +9,8 @@ alias ll='exa -l --color=always --group-directories-first'
 alias vim='nvim'
 alias apv='ansible-playbook --ask-vault-pass'
 alias cat='bat --theme Dracula'
+alias unmute='pamixer -u'
+alias volfull='pamixer --set-volume 100'
 
 # flags
 alias df='df -h'

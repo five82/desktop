@@ -21,6 +21,7 @@
       - starship
       - tldr
       - tree
+      - unzip
       - usbutils
       - wget
       - xdg-user-dirs
@@ -60,6 +61,8 @@
     group: root
     mode: '0644'
   become: yes
+  notify:
+    - reload package database
 
 # required for makemkv access to optical drive
 - name: load sg kernel module on boot

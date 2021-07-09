@@ -1,6 +1,15 @@
 ---
 # file roles/notifications/tasks/main.yml
 
+- name: download spotify gpg key
+  ansible.builtin.get_url:
+    url: https://download.spotify.com/debian/pubkey_0D811D58.gpg
+    dest: "/tmp/pubkey_0D811D58.gpg"
+
+- name: import spotify key
+  gpg_key:
+    file: "/tmp/pubkey_0D811D58.gpg"
+
 - name: install required packages
   aur:
     use: paru
