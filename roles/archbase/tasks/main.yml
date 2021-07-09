@@ -17,6 +17,7 @@
       - linux-headers
       - linux-zen-headers
       - lolcat
+      - neofetch
       - neovim
       - man-db
       - procs
