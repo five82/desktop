@@ -125,6 +125,7 @@
     group: "{{archgroup.stdout}}"
     mode: '0644'
 
+# required by wallpaper role during initial install
 - name: create Pictures directory
   ansible.builtin.file:
     path: ~/Pictures
