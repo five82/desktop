@@ -134,7 +134,8 @@
     mode: '0755'
     state: directory
 
-# Uncomment if you experience keyserver connectivity problems    
+# not sure if we need this or not so it's disabled by default.
+# it may fix gpg key download problems.    
 # - name: change default keyserver to keyserver.ubuntu.com
 #   ansible.builtin.copy:
 #     src: files/gpg.conf
