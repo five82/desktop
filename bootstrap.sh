@@ -28,7 +28,7 @@ git clone https://aur.archlinux.org/paru.git
 cd "${HOME}"/projects/aur/paru
 makepkg -sci --noconfirm
 
-# Install ansible and ansible-aur-git
+# Install ansible, ansible-aur-git, and ansible-gpg-key-kit.
 paru -S --noconfirm ansible
 paru -S --skipreview --noconfirm ansible-aur-git ansible-gpg-key-git
 
