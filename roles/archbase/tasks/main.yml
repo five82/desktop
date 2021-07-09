@@ -6,7 +6,9 @@
     use: paru
     name:
       - bat
+      - cowsay
       - exa
+      - figlet
       - fish
       - fd
       - git
@@ -14,6 +16,7 @@
       - imagemagick
       - linux-headers
       - linux-zen-headers
+      - lolcat
       - neovim
       - man-db
       - procs
