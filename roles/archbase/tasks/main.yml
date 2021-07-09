@@ -9,6 +9,7 @@
       - exa
       - fish
       - fd
+      - git
       - htop
       - imagemagick
       - linux-headers
