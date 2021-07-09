@@ -16,6 +16,7 @@
     name:
       - spotify
       - spotifyd
+      - cava
       # required for notifications
       #- playerctl
       
