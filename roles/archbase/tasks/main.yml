@@ -61,8 +61,11 @@
     group: root
     mode: '0644'
   become: yes
-  notify:
-    - reload package database
+  register: pacmanconfig
+
+- name: reload package database
+  ansible.builtin.command: paru -Sy
+  when: pacmanconfig.changed
 
 # required for makemkv access to optical drive
 - name: load sg kernel module on boot
@@ -121,6 +124,14 @@
     owner: "{{archusername.stdout}}"
     group: "{{archgroup.stdout}}"
     mode: '0644'
+
+- name: create Pictures directory
+  ansible.builtin.file:
+    path: ~/Pictures
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
 
 # Uncomment if you experience keyserver connectivity problems    
 # - name: change default keyserver to keyserver.ubuntu.com
