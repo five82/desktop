@@ -20,7 +20,7 @@
   become: yes
 
 # Remove any sudoers changes
-# All modification must be in /etc/sudoers.d
+# All modifications must be in /etc/sudoers.d/
 - name: restore default sudoers file
   ansible.builtin.copy:
     src: files/sudoers

@@ -11,7 +11,7 @@
       - nvidia-dkms-performance
       - nvidia-settings-performance
       - nvidia-utils-performance
-      - lib32-nvidia-utils-performance # steam dependency
+      - lib32-nvidia-utils-performance  # steam dependency
 
 - name: setup nvidia xorg config
   ansible.builtin.copy:

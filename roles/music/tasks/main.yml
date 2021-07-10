@@ -17,8 +17,7 @@
       - spotify
       - spotifyd
       - cava
-      # required for notifications
-      #- playerctl
+      #- playerctl  # required for notifications
       
 - name: create .config/spotifyd directory
   ansible.builtin.file:
