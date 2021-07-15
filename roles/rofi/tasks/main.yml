@@ -1,5 +1,5 @@
 ---
-# file roles/applauncher/tasks/main.yml
+# file roles/rofi/tasks/main.yml
 
 - name: install required packages
   aur:

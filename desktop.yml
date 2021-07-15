@@ -24,7 +24,7 @@
     - picom
     - filemanager
     - archivemanager
-    - applauncher
+    - rofi
     - notifications
     - images
     - wallpaper
