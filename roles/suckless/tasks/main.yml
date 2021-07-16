@@ -1,0 +1,83 @@
+---
+# file roles/suckless/tasks/main.yml
+
+- name: install j4-dmenu-desktop key
+  gpg_key:
+    fpr: A1774C1B37DC1DCEDB65EE469B8450B91D1362C1
+    keyserver: keyserver.ubuntu.com
+
+- name: install required packages
+  aur:
+    use: paru
+    name:
+      - j4-dmenu-desktop
+
+- name: create .local/share/dwm directory
+  ansible.builtin.file:
+    path: ~/.local/share/dwm
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+    state: directory
+
+- name: setup dwm autostart.sh
+  ansible.builtin.copy:
+    src: files/dwm-autostart.sh
+    dest: ~/.local/share/dwm/autostart.sh
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0755'
+
+- name: setup /usr/share/xsessions/dwm.desktop
+  ansible.builtin.copy:
+    src: files/dwm.desktop
+    dest: /usr/share/xsessions/dwm.desktop
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+
+- name: git clone five82/dwm-flexipatch
+  ansible.builtin.git:
+    repo: 'https://github.com/five82/dwm-flexipatch.git'
+    dest: ~/projects/ansible/dwm-flexipatch
+    clone: yes
+    update: yes
+    version: 'dev'
+  register: dwmflexipatch
+
+- name: (re)install dwm
+  ansible.builtin.command:
+    chdir: ~/projects/ansible/dwm-flexipatch
+    cmd: ./install.sh
+  when: dwmflexipatch.changed
+
+- name: git clone five82/dmenu-flexipatch
+  ansible.builtin.git:
+    repo: 'https://github.com/five82/dmenu-flexipatch.git'
+    dest: ~/projects/ansible/dmenu-flexipatch
+    clone: yes
+    update: yes
+    version: 'dev'
+  register: dmenuflexipatch
+
+- name: (re)install dmenu
+  ansible.builtin.command:
+    chdir: ~/projects/ansible/dmenu-flexipatch
+    cmd: ./install.sh
+  when: dmenuflexipatch.changed
+
+- name: git clone five82/dwmblocks
+  ansible.builtin.git:
+    repo: 'https://github.com/five82/dwmblocks.git'
+    dest: ~/projects/ansible/dwmblocks
+    clone: yes
+    update: yes
+    version: 'dev'
+  register: dwmblocks
+
+- name: (re)install dwmblocks
+  ansible.builtin.command:
+    chdir: ~/projects/ansible/dwmblocks
+    cmd: ./install.sh
+  when: dwmblocks.changed

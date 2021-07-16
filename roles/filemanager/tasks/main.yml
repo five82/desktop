@@ -1,14 +1,13 @@
 ---
 # file roles/filemanager/tasks/main.yml
 
-# The thunar daemon autostart is in the i3 config file.
+# The thunar daemon autostart is in the i3 config file and dwm autostart.sh.
 
 - name: install required packages
   aur:
     use: paru
     name:
-      - thunar
-      - thunar-volman
+      - pcmanfm-gtk3
       - gvfs
       - gvfs-smb
       - sshfs
