@@ -2,7 +2,6 @@
 
 # ** MANAGED BY ANSIBLE. CHANGES WILL BE OVERWRITTEN. **
 
-figlet black | lolcat -t
 starship init fish | source
 
 alias ls='exa --color=always --group-directories-first'

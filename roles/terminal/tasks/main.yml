@@ -38,3 +38,21 @@
     owner: "{{archusername.stdout}}"
     group: "{{archgroup.stdout}}"
     mode: '0644'
+
+- name: setup launch-fish-term
+  ansible.builtin.copy:
+    src: files/launch-fish-term.sh
+    dest: /usr/local/bin/launch-fish-term
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
+- name: setup launch-scratchpad-term
+  ansible.builtin.copy:
+    src: files/launch-scratchpad-term.sh
+    dest: /usr/local/bin/launch-scratchpad-term
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
