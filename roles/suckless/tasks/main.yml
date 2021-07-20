@@ -11,7 +11,6 @@
     use: paru
     name:
       - j4-dmenu-desktop
-      - playerctl
 
 - name: create .local/share/dwm directory
   ansible.builtin.file:
