@@ -81,3 +81,18 @@
     chdir: ~/projects/ansible/dwmblocks
     cmd: ./install.sh
   when: dwmblocks.changed
+
+- name: git clone five82/slock-flexipatch
+  ansible.builtin.git:
+    repo: 'https://github.com/five82/slock-flexipatch.git'
+    dest: ~/projects/ansible/slock-flexipatch
+    clone: yes
+    update: yes
+    version: 'dev'
+  register: slockflexipatch
+
+- name: (re)install slock
+  ansible.builtin.command:
+    chdir: ~/projects/ansible/slock-flexipatch
+    cmd: ./install.sh
+  when: slockflexipatch.changed

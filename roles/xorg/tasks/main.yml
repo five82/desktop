@@ -8,4 +8,4 @@
       - xorg-server
       - xorg-xrdb
       - xorg-xinput
-      - xss-lock  # required by i3lock
+      - xss-lock  # required by i3lock & slock

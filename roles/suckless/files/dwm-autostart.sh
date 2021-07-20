@@ -9,3 +9,4 @@ picom --experimental-backend &
 pcmanfm -d &
 nitrogen --restore &
 dwmblocks &
+xss-lock --transfer-sleep-lock -- slock &
