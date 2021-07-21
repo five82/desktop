@@ -56,12 +56,3 @@
     group: root
     mode: '0755'
   become: yes
-
-- name: setup launch-dwmhelp-term
-  ansible.builtin.copy:
-    src: files/launch-dwmhelp-term.sh
-    dest: /usr/local/bin/launch-dwmhelp-term
-    owner: root
-    group: root
-    mode: '0755'
-  become: yes
