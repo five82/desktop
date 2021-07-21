@@ -11,6 +11,7 @@ alias apv='ansible-playbook --ask-vault-pass'
 alias cat='bat --theme Dracula'
 alias unmute='pamixer -u'
 alias volfull='pamixer --set-volume 100'
+alias dwmhelp='bat --theme Dracula /usr/local/share/keybindings.md'
 
 # flags
 alias df='df -h'
