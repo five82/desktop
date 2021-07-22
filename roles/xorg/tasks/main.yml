@@ -9,3 +9,12 @@
       - xorg-xrdb
       - xorg-xinput
       - xss-lock  # required by i3lock & slock
+
+- name: create /usr/share/xsessions directory  # required by dwm.desktop
+  ansible.builtin.file:
+    path: /usr/share/xsessions
+    owner: root
+    group: root
+    mode: '0755'
+    state: directory
+  become: yes

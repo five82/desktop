@@ -2,6 +2,7 @@
 
 # Requirements:
 #   - A base Arch Linux install or a minimal installation using archinstall.
+#	- Install the grub bootloader (or remove the grub role)
 #   - Setup a non root user and add them to the wheel group.
 #   - Install sudo and give the user or wheel group full sudo execute permissions.
 #   - Install neovim, git, and openssh
