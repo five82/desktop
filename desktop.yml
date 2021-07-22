@@ -19,13 +19,13 @@
     - mkinitcpio
     - grub
     - desktopmanager
-    - i3
+    #- i3
     - suckless
     - sessionmanager
     - picom
     - filemanager
     - archivemanager
-    - rofi
+    #- rofi
     - notifications
     - images
     - wallpaper
