@@ -6,6 +6,8 @@
     use: paru
     name:
       - bat
+      - bluez
+      - bluez-utils
       - cowsay
       - exa
       - figlet
@@ -138,6 +140,31 @@
     group: "{{archgroup.stdout}}"
     mode: '0755'
     state: directory
+
+- name: setup bluetooth config file - main.conf
+  ansible.builtin.copy:
+    src: files/bluetooth-main.conf
+    dest: /etc/bluetooth/main.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+  register: bluetoothconfig
+
+- name: restart bluetooth.service
+  ansible.builtin.systemd:
+    name: bluetooth.service
+    enabled: yes
+    state: restarted
+  become: yes
+  when: bluetoothconfig.changed
+
+- name: setup bluetooth.service
+  ansible.builtin.systemd:
+    name: bluetooth.service
+    enabled: yes
+    state: started
+  become: yes
 
 # not sure if we need this or not so it's disabled by default.
 # it may fix gpg key download problems.    
