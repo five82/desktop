@@ -6,6 +6,16 @@
     use: paru
     name:
       - steam
+      - steamos-compositor-plus
       - community/gamemode
       - proton-ge-custom-bin
       - protontricks
+
+- name: setup steamos-compositor-plus config
+  ansible.builtin.copy:
+    src: files/steamos-compositor-plus
+    dest: ~/.config/steamos-compositor-plus
+    owner: "{{archusername.stdout}}"
+    group: "{{archgroup.stdout}}"
+    mode: '0644'
+    backup: yes
